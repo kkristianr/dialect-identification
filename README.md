@@ -8,11 +8,16 @@ Therefore, the project type is crearly a "beat the classics".
 ### Relevant scientific papers
 * Findings of the VarDial Evaluation Campaign 2017
   * https://aclanthology.org/W17-1201.pdf
-  * The paper presents the results of the fourth edition of the shared challenge: "VarDial Evaluation Campaign on Natural Language Processing (NLP) for Similar Languages, Varieties and Dialects", which took part in year 2017. Four tasks about Discriminating between Similar Languages (DSL), Dialect Identification (GDI), and similar were addressed by 19 teams. 
- * https://aclanthology.org/W17-1220.pdf
- * This paper addresses specifically the German Dialect Identification (GDI) task of the challenge. It presents three different solutions and their results.
+    * The paper presents the results of the fourth edition of the shared challenge: "VarDial Evaluation Campaign on Natural Language Processing (NLP) for Similar Languages, Varieties and Dialects", which took part in year 2017. Four tasks about Discriminating between Similar Languages (DSL), Dialect Identification (GDI), and similar were addressed by 19 teams. 
+  * https://aclanthology.org/W17-1220.pdf
+    * This paper addresses specifically the German Dialect Identification (GDI) task of the challenge. It presents three different solutions and their results.
+  * http://nlp.ffzg.hr/data/publications/nljubesi/ljubesic07-language.pdf
+    * This papes addresses the differences between bosnian, croatian, and serbian. It provides some knownledge and first NLP steps regarding these three similar languages.
+  * In both cases, the results show that traditional classifiers outperformed deep learning approaches. 
+* Automatic Arabic Dialect Classification Using Deep Learning Models
+  * https://www.sciencedirect.com/science/article/pii/S1877050918321938
+  * The authors use variations of CNN, RNN, LSTM networks to classify arabic dialects. 
 
-In both cases, the results show that traditional classifiers outperformed deep learning approaches. 
 
 ### Datasets 
 Three groups of similar languages/dialects will be used: 
@@ -20,7 +25,7 @@ Three groups of similar languages/dialects will be used:
   * http://ttg.uni-saarland.de/resources/DSLCC/
  
 * Argentine Spanish & Peninsular Spanish
- * * http://ttg.uni-saarland.de/resources/DSLCC/
+ * http://ttg.uni-saarland.de/resources/DSLCC/
 
 * German (swiss) dialects: 
   * https://www.spur.uzh.ch/en/departments/research/textgroup/ArchiMob.html
