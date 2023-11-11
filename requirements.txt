@@ -1,0 +1,5 @@
+gdown
+ipykernel 
+pandas 
+numpy
+stanza
