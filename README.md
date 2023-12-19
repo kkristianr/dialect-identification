@@ -26,7 +26,7 @@ As a result for this submission, both approaches would be examinated and compare
 
 
 Model  | Epochs  | Accuracy | F1(weighted)
-------------- | -------------
+------------- | ------------- |------------- | -------------
 base_linearSVM | 30 | 0.77 | 0.77
 base_biLSTM | | |
 bert_multilingual | | |
@@ -35,9 +35,9 @@ bert_multilingual | | |
 ## Results for the experiment: croatian-bosnian-serbian 
 
 Model  | Epochs  | Accuracy | F1(weighted)
-------------- | -------------
+------------- | -------------| ------------- | -------------
 base_linearSVM | 30 | 0.73 | 0.77
-base_biLSTM | | |
+base_biLSTM | 10 | |
 bert_multilingual |3 | 0.85 | 0.85
 bertic |3 | 0.72| 0.76
 
