@@ -72,19 +72,21 @@ As result, we have a train_prepro.csv and a test_prepro.csv with the following p
 * Train size: 162190 - where 20% is used as validation test in the training
 * Test size: 20116 - used fully as "unseen" data to evaluate the fine-tuined model.
 
-#### Evaluations
-
+#### Models & Evaluation
+Given the nature of the data set, we opted for a transfomer language model, named [BERT multilingual base model (cased)](https://huggingface.co/bert-base-multilingual-cased), which was trained on top of 104 languages. 
+For our sub-task on discriminating between bosnian, croatian and serbian, we experimented a bit with [BERTić](https://huggingface.co/classla/bcms-bertic) transformer language model as well. 
+The models are implemented in seperate notebooks and were trained on Google Colab using GPU ressources. The training times for two/three epochs were inbetween 4-8 hours using between 15 and 30GBs of GPU. An upgrade to Google+Pro was at most point inevitable. 
 
 ## 4. Results
-
 #### All dialects
 
 Model  | Epochs  | Accuracy | F1(weighted)
 ------------- | ------------- |------------- | -------------
 base_linearSVM | - | 0.75 | 0.75
 base_biLSTM |4 | 0.70 | 0.70
-bert_multilingual | 2 | 0.80 | 0.80
+BERT_Multilingual | 2 | 0.80 | 0.80
 
+We were able to beat our baselines, however we missed our initial goal of 0.9 regarding the F1 score. I interpret the results as promising since we hardly optimized our model and we were initially limited by ressources and time. I am highly confident that with some hyperparameter optimization and eventually more epochs, it's possible to achieve a F1 score between 0.85 and 0.9
 
 #### Experiment on BKS  
 
@@ -92,10 +94,10 @@ Model  | Epochs  | Accuracy | F1(weighted)
 ------------- | -------------| ------------- | -------------
 base_linearSVM | - | 0.81 | 0.81
 base_biLSTM | 3 | 0.75 | 0.76
-bert_multilingual |3 | 0.85 | 0.85
-bertic | 3 | 0.72 | 0.76
+BERT_Multilingual |3 | 0.85 | 0.85
+BERTić | 3 | 0.72 | 0.76
 
-
+In this experiment, the goal was to use a better trained transformer for a similar group of languages. [BERTić](https://huggingface.co/classla/bcms-bertic) was the choice for this sub-task. Unfoturnately BERTić did not deliver and was outperformed by the BERT multilingual base model. Nevertheless, we could beat our baselines with the use of transformer language models. 
 
 
 ## 5. Discussion and conclusion 
