@@ -2,7 +2,7 @@
 ## Part 2 of: "Discriminating similar languages and dialects using Transformers"
 
 In this second submission for the "Applied Deep Learning" Course at the TU Wien, I present the insights, code and the results of my investigation and experimantion for discriminating similar laguanges and/or dialects using modern deep learning approachs, transformers to be more precise. 
-The initial idea of the project was to "beat the classics" in multi (similar) languages/dialects classification. In previous open challenges in this field, traditional classifiers such as customized fine-tuned linear SVM, emsembles, and Naive Bayes using n-gram had the upperhand [1]. Only in the last years more generic but also fine-tuined as well challenge-suited transformers came into play to prove their use case in such challenges. 
+The initial idea of the project was to "beat the classics" in multi (similar) languages/dialects classification. In previous open challenges in this field, traditional classifiers such as customized fine-tuned linear SVM, emsembles, and Naive Bayes using n-gram had the upperhand [1]. Only in the last years more generic but also fine-tuined as well challenge-suited transformers came into play to prove their use case in such challenges[2]. 
 
 To get an overall idea of the task and its challenges, I decided to implement the two following (strong) baselines, which are reported to work well in this task.
 * SVM (linear kernel) 
@@ -32,10 +32,12 @@ As a result for this submission, both approaches would be examinated and compare
 * Test size: used fully as "unseen" data to evaluate the fine-tuined model.
   
 ## 2. Goals & Baselines
+The goal was to come close the winners of the VarDial Challenge 2017, which means having a F1 weighted score around 90% for the full task. Based on some approaches used in the challenge, I developed some baselines, which were still far from an ideal score. Not being an easy task, I accepted the results of my baselines and focused more on the deep learning approach. The results of the baselines are despicted in the "Results" table. 
 
 ## 3. Code
 
-#### Dataset
+
+#### Structure
 
 ```
 ├── data
@@ -48,15 +50,19 @@ As a result for this submission, both approaches would be examinated and compare
 │   ├── base_SVM.ipynb
 │   ├── base_RNN.ipynb
 │   ├── bert_multilingual.ipynb
-│   └──experiment
+│   └── experiment
 │       ├── base_SVM_bks.ipynb
 │       ├── base_RNN_bks.ipynb
 │       ├── bert_multilingual_bks.ipynb
 │       └── bertic.ipynb
-└── src (not really used since everything ran on Colab) 
-    ├── DataModule.py
-    ├── LanguagesDataSet.py
-    └── utils.py
+│── src (not really used since everything ran on Colab) 
+│    ├── DataModule.py
+│    ├── LanguagesDataSet.py
+│    ├── utlis.py
+│    └── models (to store the fine-tuined models from Colab)
+│         ├── ..
+└── requirements.txt
+
 ```
 
 ## 4. Results
@@ -98,4 +104,5 @@ Report & final presentation | 8 | ...
 
 ### References 
 [1] Marcos Zampieri, Shervin Malmasi,Nikola Ljubesic, Preslav Nakov, Ahmed Ali, Jörg Tiedemann, Yves Scherrer, Noemi Aepli, 2017, Findings of the VarDial Evaluation Campaign
+[2] Aepli et al., VarDial 2022, [Findings of the VarDial Evaluation Campaign 2022](https://aclanthology.org/2022.vardial-1.1) 
 
