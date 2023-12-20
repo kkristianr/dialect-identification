@@ -3,10 +3,6 @@
 
 In this second submission for the "Applied Deep Learning" Course at the TU Wien, I present the insights, code and the results of my investigation and experimantion for discriminating similar laguanges and/or dialects using modern deep learning approachs, transformers to be more precise. 
 The initial idea of the project was to "beat the classics" in multi (similar) languages/dialects classification. In previous open challenges in this field, traditional classifiers such as customized fine-tuned linear SVM, emsembles, and Naive Bayes using n-gram had the upperhand [1]. Only in the last years more generic but also fine-tuined as well challenge-suited transformers came into play to prove their use case in such challenges[2]. 
-
-To get an overall idea of the task and its challenges, I decided to implement the two following (strong) baselines, which are reported to work well in this task.
-* SVM (linear kernel) 
-* RNN based on bidirectional LSTM
   
 > [!NOTE]<br>
 > During the search for suitable Transformers, an underlying consideration led to small readjustments of the goals of the project.
@@ -32,13 +28,16 @@ As a result for this submission, both approaches would be examinated and compare
 * Test size: used fully as "unseen" data to evaluate the fine-tuined model.
   
 ## 2. Goals & Baselines
-The goal was to come close the winners of the VarDial Challenge 2017, which means having a F1 weighted score around 90% for the full task. Based on some approaches used in the challenge, I developed some baselines, which were still far from an ideal score. Not being an easy task, I accepted the results of my baselines and focused more on the deep learning approach. The results of the baselines are despicted in the "Results" table. 
+The goal was to come close the winners of the VarDial Challenge 2017, which means having a F1 weighted score around 90% for the full task. 
+
+To get an overall idea of the task and its challenges, I decided to implement the two following (strong) baselines, which are reported to work well in this task.
+* SVM (linear kernel) 
+* RNN based on bidirectional LSTM
+  
+The results were still far from an ideal score. Not being an easy task, I accepted the results of my baselines and focused more on the deep learning approach. The results of the baselines are despicted in the "Results" table. 
 
 ## 3. Code
-
-
 #### Structure
-
 ```
 ├── data
 │   ├── all
@@ -59,11 +58,22 @@ The goal was to come close the winners of the VarDial Challenge 2017, which mean
 │    ├── DataModule.py
 │    ├── LanguagesDataSet.py
 │    ├── utlis.py
-│    └── models (to store the fine-tuined models from Colab)
+│    └── models (to store the fine-tuined models and vocabs from Colab)
 │         ├── ..
 └── requirements.txt
-
 ```
+
+#### Data sets and preprocessing
+The data is relatively simple, the one and only input feature is the content of the excerpt of the journalistic text. The target variable is the language/dialect (in our dataset: the abbreviation of the language/dialect).
+The input text was roughly preprocessed, keeping special characters over the letters and not applying lower-case format for all tokens. It has to be said that the baseline results were slightly higher with more language-preprocessing such as removing all special letters and so on. Since we dealt with different languages and as result different uni-codes, the pre-processing steps were not that restricted. 
+
+As result, we have a train_prepro.csv and a test_prepro.csv with the following properties
+* Target labels: 12 
+* Train size: 162190 - where 20% is used as validation test in the training
+* Test size: 20116 - used fully as "unseen" data to evaluate the fine-tuined model.
+
+#### Evaluations
+
 
 ## 4. Results
 
@@ -83,7 +93,7 @@ Model  | Epochs  | Accuracy | F1(weighted)
 base_linearSVM | - | 0.81 | 0.81
 base_biLSTM | 3 | 0.75 | 0.76
 bert_multilingual |3 | 0.85 | 0.85
-bertic | 3 | 0.72| 0.76
+bertic | 3 | 0.72 | 0.76
 
 
 
