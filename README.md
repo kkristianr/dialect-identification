@@ -53,7 +53,7 @@ The results were still far from an ideal score. Not being an easy task, I accept
 │       ├── base_SVM_bks.ipynb
 │       ├── base_RNN_bks.ipynb
 │       ├── bert_multilingual_bks.ipynb
-│       └── bertic.ipynb
+│       └── bertic_bks.ipynb
 │── src (not really used since everything ran on Colab) 
 │    ├── DataModule.py
 │    ├── LanguagesDataSet.py
@@ -95,9 +95,9 @@ Model  | Epochs  | Accuracy | F1(weighted)
 base_linearSVM | - | 0.81 | 0.81
 base_biLSTM | 3 | 0.75 | 0.76
 BERT_Multilingual |3 | 0.85 | 0.85
-BERTić | 3 | 0.72 | 0.76
+BERTić | 3 | 0.85 | 0.86
 
-In this experiment, the goal was to use a better trained transformer for a similar group of languages. [BERTić](https://huggingface.co/classla/bcms-bertic) was the choice for this sub-task. Unfoturnately BERTić did not deliver and was outperformed by the BERT multilingual base model. Nevertheless, we could beat our baselines with the use of transformer language models. 
+In this experiment, the goal was to use a better trained transformer for a similar group of languages. [BERTić](https://huggingface.co/classla/bcms-bertic) was the choice for this sub-task. For our task, BERTić outperformed the BERT multilingual base model. Overall, we could beat our baselines with the use of transformer language models. 
 
 
 ## 5. Discussion and conclusion 
