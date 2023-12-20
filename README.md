@@ -60,7 +60,7 @@ As a result for this submission, both approaches would be examinated and compare
 Model  | Epochs  | Accuracy | F1(weighted)
 ------------- | ------------- |------------- | -------------
 base_linearSVM | - | 0.75 | 0.75
-base_biLSTM | | |
+base_biLSTM |15 | 0.66 | 0.64
 bert_multilingual | 2 |0.80 | 0.80
 
 
@@ -69,7 +69,7 @@ bert_multilingual | 2 |0.80 | 0.80
 Model  | Epochs  | Accuracy | F1(weighted)
 ------------- | -------------| ------------- | -------------
 base_linearSVM | - | 0.81 | 0.81
-base_biLSTM | 10 | | 
+base_biLSTM | 15 | 0.75 | 0.75
 bert_multilingual |3 | 0.85 | 0.85
 bertic | 3 | 0.72| 0.76
 
