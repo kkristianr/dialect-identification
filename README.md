@@ -1,5 +1,5 @@
 
-## Part 2 of: "Discriminating similar languages and dialects using Transformers"
+## Submission 2 of: "Discriminating similar languages and dialects using Transformers"
 
 In this second submission for the "Applied Deep Learning" Course at the TU Wien, I present the insights, code and the results of my investigation and experimantion for discriminating similar laguanges and/or dialects using modern deep learning approachs, transformers to be more precise. 
 The initial idea of the project was to "beat the classics" in multi (similar) languages/dialects classification. In previous open challenges in this field, traditional classifiers such as customized fine-tuned linear SVM, emsembles, and Naive Bayes using n-gram had the upperhand [1]. Only in the last years more generic but also fine-tuined as well challenge-suited transformers came into play to prove their use case in such challenges[2]. 
@@ -9,7 +9,7 @@ The initial idea of the project was to "beat the classics" in multi (similar) la
 > At the beginning I believed it would be feasible to approach different groups of languages (such as different versions of spanish, of portugese, german dialects and serbian/croatian/bosnian) all together, where the numbers of classes to predict is the total number of dialects/languages in the data set. In this case, the data set had four different "parent" languages and 12 target labels.
 > Furthermore, the essential consideration was: "Is such a classification between different dialects and languages across the world even needed?". It was then clear, that the main interest is to be able to identify dialects or similar languages within a region (or within a "parent" language).   
 
-As a result for this submission, both approaches would be examinated and compared. In the second part of the submission, we examine the discrimination of three similar south-slavic languages (bosnian, croatian, serbian). 
+As a result for this submission, both approaches would be examinated and compared. In the second part of the submission, we examine the classification of three similar south-slavic languages (bosnian, croatian, serbian). 
 
 ## Table of contents
 
@@ -116,5 +116,6 @@ Report & final presentation | 8 | ...
 
 ### References 
 [1] Marcos Zampieri, Shervin Malmasi,Nikola Ljubesic, Preslav Nakov, Ahmed Ali, Jörg Tiedemann, Yves Scherrer, Noemi Aepli, 2017, Findings of the VarDial Evaluation Campaign
+
 [2] Aepli et al., VarDial 2022, [Findings of the VarDial Evaluation Campaign 2022](https://aclanthology.org/2022.vardial-1.1) 
 
