@@ -35,9 +35,7 @@ As a result for this submission, both approaches would be examinated and compare
 
 ## 3. Code
 
-
 #### Dataset
-
 
 ```
 ├── data
@@ -50,21 +48,16 @@ As a result for this submission, both approaches would be examinated and compare
 │   ├── base_SVM.ipynb
 │   ├── base_RNN.ipynb
 │   ├── bert_multilingual.ipynb
-│   ├── experiment
-│   │   ├── base_SVM_bks.ipynb
-│   │   ├── base_RNN_bks.ipynb
-│   │   ├── bert_multilingual_bks.ipynb
-│   │   └── bertic.ipynb
-├── src (not really used since everything ran on Colab) 
-│   ├── DataModule.py
-│   ├── LanguagesDataSet.py
-├── 
-│   └── 
-
+│   └──experiment
+│       ├── base_SVM_bks.ipynb
+│       ├── base_RNN_bks.ipynb
+│       ├── bert_multilingual_bks.ipynb
+│       └── bertic.ipynb
+└── src (not really used since everything ran on Colab) 
+    ├── DataModule.py
+    ├── LanguagesDataSet.py
+    └── utils.py
 ```
-
-
-
 
 ## 4. Results
 
