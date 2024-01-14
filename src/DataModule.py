@@ -1,46 +1,23 @@
 import lightning as L
 from torch.utils.data import DataLoader, random_split
+from transformers import AutoModel
+import torch
 
 
-class DataModule(L.LightningDataModule):
-    def __init__(self, train, test, batch_size=32, shuffle_train=True):
-        super().__init__()
-        self.batch_size = batch_size
-        self.shuffle_train = shuffle_train
-        self.dataset = train
-        self.test_dataset = test
+class BERTMultiClass(torch.nn.Module):
+    def __init__(self):
+        super(BERTMultiClass, self).__init__()
+        self.l1 = AutoModel.from_pretrained(model_name)
+        self.pre_classifier = torch.nn.Linear(768, 768)
+        self.dropout = torch.nn.Dropout(0.3)
+        self.classifier = torch.nn.Linear(768, 12)
 
-
-        # Split the dataset into train, val, and test
-        dataset_size = len(self.dataset)
-        train_size = int(0.8 * dataset_size)
-        val_size = (dataset_size - train_size)
-        self.train_dataset, self.val_dataset = random_split(
-            self.dataset, [train_size, val_size]
-        )
-
-    def train_dataloader(self):
-        '''Returns the DataLoader for the training set'''
-        return DataLoader(
-            self.train_dataset,
-            batch_size=self.batch_size,
-            shuffle=self.shuffle_train,
-        )
-
-    def val_dataloader(self):
-        '''Returns the DataLoader for the validation set'''
-        return DataLoader(
-            self.val_dataset,
-            batch_size=256,
-            shuffle=False,
-            drop_last=True,
-        )
-
-    def test_dataloader(self):
-        '''Returns the DataLoader for the test set'''
-        return DataLoader(
-            self.test_dataset,
-            batch_size=256,
-            shuffle=False,
-            drop_last=True,
-        )
+    def forward(self, input_ids, attention_mask):
+        output_1 = self.l1(input_ids=input_ids, attention_mask=attention_mask)
+        hidden_state = output_1[0]
+        pooler = hidden_state[:, 0]
+        pooler = self.pre_classifier(pooler)
+        pooler = torch.nn.ReLU()(pooler)
+        pooler = self.dropout(pooler)
+        output = self.classifier(pooler)
+        return output
