@@ -1,12 +1,6 @@
-streamlit
-streamlit-tags
-lightning==2.1
 numpy==1.23.5
 pandas==2.1.4
-protobuf==3.20.3
+Requests==2.31.0
+streamlit_tags==1.2.8
 torch==2.0.0
-torch==2.0.0+cu117
-torchvision==0.15.0
-#torchtext==0.15.0
 transformers==4.32.1
-torch==2.0.0+cu117
