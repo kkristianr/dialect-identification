@@ -79,7 +79,7 @@ c1, c2 = st.columns([0.32, 2])
 with c1:
 
     st.image(
-        "images/loco.png",
+        "loco.png",
         width=85,
     )
 
