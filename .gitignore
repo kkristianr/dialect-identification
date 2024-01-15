@@ -1,0 +1,9 @@
+/src/finetuned
+/src/models
+/data
+/data/*
+*.csv
+/readings
+src/__pycache__
+
+/streamlit/dashboards_utils.py/__pycache__
