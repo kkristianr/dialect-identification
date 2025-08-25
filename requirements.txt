@@ -1,0 +1,10 @@
+streamlit
+streamlit-tags
+lightning==2.1
+numpy==1.23.5
+pandas==2.1.4
+protobuf==3.20.3
+torch==2.0.0
+torchvision==0.15.0
+torchtext==0.15.0
+transformers==4.32.1
