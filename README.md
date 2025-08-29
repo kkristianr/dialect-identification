@@ -1,7 +1,11 @@
 
-## Submission 2 of: "Discriminating similar languages and dialects using Transformers"
+## Discriminating similar languages and dialects using Transformers
 
-In this second submission for the "Applied Deep Learning" Course at the TU Wien, I present the insights, code and the results of my investigation and experimantion for discriminating similar laguanges and/or dialects using modern deep learning approachs, transformers to be more precise. 
+_Project for the "Applied Deep Learning" Course at the TU Wien. 3 ECTS/90hours including benchmark definition, data processing, model selection, training and finetuning, evaluation, discussion, presentation and deployment of demo application._ 
+
+Link to presentation (_5 min_): https://www.youtube.com/watch?v=JFo7F-MQ7lM
+
+I present the insights, code and the results of my investigation and experimantion for discriminating similar laguanges and/or dialects using modern deep learning approachs, transformers to be more precise. 
 The initial idea of the project was to "beat the classics" in multi (similar) languages/dialects classification. In previous open challenges in this field, traditional classifiers such as customized fine-tuned linear SVM, emsembles, and Naive Bayes using n-gram had the upperhand [1]. Only in the last years more generic but also fine-tuined as well challenge-suited transformers came into play to prove their use case in such challenges[2]. 
   
 > [!NOTE]<br>
@@ -9,7 +13,7 @@ The initial idea of the project was to "beat the classics" in multi (similar) la
 > At the beginning I believed it would be feasible to approach different groups of languages (such as different versions of spanish, of portugese, german dialects and serbian/croatian/bosnian) all together, where the numbers of classes to predict is the total number of dialects/languages in the data set. In this case, the data set had four different "parent" languages and 12 target labels.
 > Furthermore, the essential consideration was: "Is such a classification between different dialects and languages across the world even needed?". It was then clear, that the main interest is to be able to identify dialects or similar languages within a region (or within a "parent" language).   
 
-As a result for this submission, both approaches would be examinated and compared. In the second part of the submission, we examine the classification of three similar south-slavic languages (bosnian, croatian, serbian). 
+As a result for this experiment, both approaches would be examinated and compared. In the second part of the experiment, we examine the classification of three similar south-slavic languages (bosnian, croatian, serbian). 
 
 ## Table of contents
 
@@ -86,7 +90,7 @@ base_linearSVM | - | 0.75 | 0.75
 base_biLSTM |4 | 0.70 | 0.70
 BERT_Multilingual | 2 | 0.80 | 0.80
 
-We were able to beat our baselines, however we missed our initial goal of 0.9 regarding the F1 score. I interpret the results as promising since we hardly optimized our model and we were initially limited by ressources and time. I am highly confident that with some hyperparameter optimization and eventually more epochs, it's possible to achieve a F1 score between 0.85 and 0.9
+We were able to beat our baselines, however we missed our initial goal of 0.9 regarding the F1 score. It's difficult to interpret these results not having a strong LLM/bert baseline, however I am sure that with some constrastive learning, hyperparameter optimization and eventually more epochs, it's possible to achieve a higher score. 
 
 #### Experiment on BKS  
 
@@ -101,7 +105,7 @@ In this experiment, the goal was to use a better trained transformer for a simil
 
 
 ## 5. Discussion and conclusion 
-Surprisingly the invested effort for the second submission "hacking" releaved itself to be close to the overall estimated effort. However, small differences occured and are visible in the following table. The pure development of an architecture for the transfomers to get it running was relatively fast, unfortunately only during the training and results examination many problems and poor performance come into sight. A lot of adjustments and re-runs to come close to our baseline were necessary. Patience was key, but my patience became quickly frustration and I switched to Google Colab+Pro to speed up my training times in order to try different paramenters and experiment a bit more. 
+Surprisingly the invested effort for the "hacking" part releaved itself to be close to the overall estimated effort. However, small differences occured and are visible in the following table. The pure development of an architecture for the transfomers to get it running was relatively fast, unfortunately only during the training and results examination many problems and poor performance come into sight. A lot of adjustments and re-runs to come close to our baseline were necessary. Patience was key, but my patience became quickly frustration and I switched to Google Colab+Pro to speed up my training times in order to try different paramenters and experiment a bit more. 
 
 
 Task  | Estimated effort in hours  | Actual effort in hours 
@@ -111,8 +115,8 @@ Benchmark with traditional classifier & "traditional" RNN of some type | 12 | 12
 Development of LLMs | 15 | 8
 Training and fine-tuning | 30 | 40-50
 Comparison of different LLMs models vs more traditional models & vs winner of last shared challenge | 5 | 4
-Delivarable product as application | 25 | ... 
-Report & final presentation | 8 | ...
+Delivarable product as application | 25 | 20 
+Report & final presentation | 8 | 5
 
 ### References 
 [1] Marcos Zampieri, Shervin Malmasi,Nikola Ljubesic, Preslav Nakov, Ahmed Ali, Jörg Tiedemann, Yves Scherrer, Noemi Aepli, 2017, Findings of the VarDial Evaluation Campaign
